@@ -22,8 +22,7 @@ we are using password 123...
 the program will copy the generated csv file to your home folder of your running docker container.
 
 <h1>SQL</h1>
-<p>To run the quries you need to run this <a href="https://bit.ly/2EyCDsk" rel="nofollow">dump file</a> into you SQL-Database.</p>
-
+<p>To run the quries you need to run this <a href="https://bit.ly/2EyCDsk" rel="https://github.com/Mokayed/GutenbergProject/blob/master/dump.sql">dump file</a> into you SQL-Database.</p>
 
 <h2>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h2>
 
