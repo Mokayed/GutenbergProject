@@ -1,5 +1,7 @@
 # GutenbergProject
 
+> _By Group 4 - Murched Kayed, Hallur vid Neyst & Zaeem Shafiq_
+
 <h1>Introduction</h1>
 
 <p>This is a solution for the <a href="https://bit.ly/2EyCDsk" rel="https://github.com/datsoftlyngby/soft2019spring-databases/tree/master/Exam"> Gutenber project </a>, using Java to generate the needed csv files to import into the database, there ben used two diffrent databases SQL and MongodDB</p>
