@@ -1,25 +1,9 @@
 # GutenbergProject
 
 
-# GutenbergDatabaseExamProject
+<h1>Introduction</h1>
 
-1. You need to do some extra steps to make this project work (apart from running it in Netbeans idé)...
-
-
-
-2. go into your docker container containing mysql-server -> /etc/mysql/my.cnf.
-
-change whatever secure-file-priv says to: secure-file-priv=/home
-
-if your docker container name is not "some-mysql" then you can change it to your name at line: 58 in the Main file.
-
-we are using localhost...
-
-we are using root user...
-
-we are using password 123...
-
-the program will copy the generated csv file to your home folder of your running docker container.
+<p>This is a solution for the <a href="https://bit.ly/2EyCDsk" rel="https://github.com/datsoftlyngby/soft2019spring-databases/tree/master/Exam"> Gutenber project </a>, using Java to generate the needed csv files to import into the database, there ben used two diffrent databases SQL and MongodDB</p>
 
 <h1>SQL</h1>
 <p>To run the quries you need to run this <a href="https://bit.ly/2EyCDsk" rel="https://github.com/Mokayed/GutenbergProject/blob/master/dump.sql">dump file</a> into you SQL-Database.</p>
