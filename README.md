@@ -24,7 +24,7 @@ the program will copy the generated csv file to your home folder of your running
 <h1>SQL</h1>
 <p>To run the quries you need to run this <a href="https://bit.ly/2EyCDsk" rel="https://github.com/Mokayed/GutenbergProject/blob/master/dump.sql">dump file</a> into you SQL-Database.</p>
 
-<h2>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h2>
+<h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
 
 ```sql
 select title, authorName from book
@@ -33,14 +33,14 @@ inner join Cities on Cities.id = cityMention.cityId
 inner join authorBooks on authorBooks.bookId = book.id
 where Cities.cityName = 'London';
 ```
-<h2>2-Given a book title, your application plots all cities mentioned in this book.</h2>
+<h3>2-Given a book title, your application plots all cities mentioned in this book.</h3>
 
 ```sql
  SELECT book.id, cityName as cityMentioned, latitude, longitude, cityMention.count as cityOccurences, title FROM book INNER JOIN cityMention ON book.id = cityMention.bookId INNER JOIN Cities
  ON Cities.id = cityMention.cityId WHERE book.title = ?;
 ```
 
-<h2>3-Given an author name your application lists all books written by that author and plots all cities mentioned in any of the book</h2>
+<h3>3-Given an author name your application lists all books written by that author and plots all cities mentioned in any of the book</h3>
 
 ```sql
  SELECT authorName, cityMention.bookId, cityName as mentionedCity , latitude, longitude, title as bookTitle FROM authorBooks 
