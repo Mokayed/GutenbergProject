@@ -36,7 +36,8 @@ where Cities.cityName = 'London';
 <h3>2-Given a book title, your application plots all cities mentioned in this book.</h3>
 
 ```sql
- SELECT book.id, cityName as cityMentioned, latitude, longitude, cityMention.count as cityOccurences, title FROM book INNER JOIN cityMention ON book.id = cityMention.bookId INNER JOIN Cities
+ SELECT book.id, cityName as cityMentioned, latitude, longitude, cityMention.count as cityOccurences, title
+ FROM book INNER JOIN cityMention ON book.id = cityMention.bookId INNER JOIN Cities
  ON Cities.id = cityMention.cityId WHERE book.title = ?;
 ```
 
