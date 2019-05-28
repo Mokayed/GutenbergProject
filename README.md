@@ -1,5 +1,6 @@
 # GutenbergProject
 
+<p><font color="red">This is some text!</font></p>
 
 <h1>Introduction</h1>
 
