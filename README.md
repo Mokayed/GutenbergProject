@@ -46,7 +46,7 @@ INNER JOIN Cities ON Cities.id = cityMention.cityId
 
 <h1>MongoDB</h1>
 
-<h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
+<h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city 'London'.</h3>
 
 ```mongo
 db.authors.aggregate([
