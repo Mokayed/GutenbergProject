@@ -9,6 +9,12 @@
 <h1>SQL</h1>
 <h4>To run the quries you need to run this <a href="https://bit.ly/2EyCDsk" rel="https://github.com/Mokayed/GutenbergProject/blob/master/dump.sql">dump file</a> into you SQL-Database.</h4>
 
+<h2>index's</h2>
+
+```sql
+create index authors_book_id_index on authors(book_id);
+```
+
 <h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
 
 ```sql
