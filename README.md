@@ -49,12 +49,10 @@ INNER JOIN Cities ON Cities.id = cityMention.cityId
 <h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
 
 ```mongo
-db.getCollection("authors").find(
-    { 
-        "books.cities.cityName" : "London"
-    }, 
-    { 
-        "books.title" : "$books.title"
-    }
-);
+db.authors.aggregate([
+{ "$unwind": "$books" },
+{"$unwind" : "$books.cities"},
+{"$match" : {"books.cities.cityName" : "London"}},
+{"$group" : {"_id" : {"_id" : "$_id", "book" : "$books.cities.cityName"}}}
+])
 ```
