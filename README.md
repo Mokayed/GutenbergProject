@@ -68,13 +68,12 @@ db.authors.aggregate([
 ])
 ```
 
-<h3>3-Given an author name your application lists all books written by that author and plots all cities mentioned in any of the book</h3>
+<h3>3-Given an author name your application lists all books written by that author "Various" and plots all cities mentioned in any of the book</h3>
 
 ```mongo
 db.authors.aggregate([
 { "$unwind": "$books" },
-{"$unwind" : "$books.cities"},
-{"$match" : {"books.title" : "The Life and Most Surprising Adventures of Robinson Crusoe, of York, Mariner (1801)"}},
-{"$group" : {"_id" : {"_id" : "$_id", "book" : "$books.title", "cities" : "$books.cities.cityName"}}}
+{"$match" : {"authorName" : "Various"}},
+{"$group" : {"_id" : {"_id" : "$_id", "book" : "$books.title", "cities" : "$books.cities"}}}
 ])
 ```
