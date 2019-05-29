@@ -23,7 +23,7 @@ select title, authorName from book
 inner join cityMention on cityMention.bookId = book.id
 inner join Cities on Cities.id = cityMention.cityId
 inner join authorBooks on authorBooks.bookId = book.id
-where Cities.cityName = 'London';
+where Cities.cityName = ?;
 ```
 <h3>2-Given a book title, your application plots all cities mentioned in this book.</h3>
 
