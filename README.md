@@ -49,72 +49,12 @@ INNER JOIN Cities ON Cities.id = cityMention.cityId
 <h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
 
 ```mongo
-use dbms;
-db.getCollection("book").aggregate(
-    [
-        { 
-            "$project" : {
-                "_id" : NumberInt(0), 
-                "book" : "$$ROOT"
-            }
-        }, 
-        { 
-            "$lookup" : {
-                "localField" : "book.bookId", 
-                "from" : "cityMention", 
-                "foreignField" : "bookId", 
-                "as" : "cityMention"
-            }
-        }, 
-        { 
-            "$unwind" : {
-                "path" : "$cityMention", 
-                "preserveNullAndEmptyArrays" : false
-            }
-        }, 
-        { 
-            "$lookup" : {
-                "localField" : "cityMention.cityId", 
-                "from" : "cities", 
-                "foreignField" : "cityId", 
-                "as" : "cities"
-            }
-        }, 
-        { 
-            "$unwind" : {
-                "path" : "$cities", 
-                "preserveNullAndEmptyArrays" : false
-            }
-        }, 
-        { 
-            "$lookup" : {
-                "localField" : "cityMention.bookId", 
-                "from" : "authorBook", 
-                "foreignField" : "bookId", 
-                "as" : "authorBook"
-            }
-        }, 
-        { 
-            "$unwind" : {
-                "path" : "$authorBook", 
-                "preserveNullAndEmptyArrays" : false
-            }
-        }, 
-        { 
-            "$match" : {
-                "cities.cityName" : "London"
-            }
-        }, 
-        { 
-            "$project" : {
-                "book.title" : "$book.title", 
-                "authorBook.authorName" : "$authorBook.authorName", 
-                "_id" : NumberInt(0)
-            }
-        }
-    ], 
+db.getCollection("authors").find(
     { 
-        "allowDiskUse" : true
+        "books.cities.cityName" : "London"
+    }, 
+    { 
+        "books.title" : "$books.title"
     }
 );
 ```
