@@ -56,3 +56,13 @@ db.authors.aggregate([
 {"$group" : {"_id" : {"_id" : "$_id", "book" : "$books.cities.cityName"}}}
 ])
 ```
+<h3>2-Given a book title, your application plots all cities mentioned in this book "The Life and Most Surprising Adventures of Robinson Crusoe, of York, Mariner (1801)".</h3>
+
+```mongo
+db.authors.aggregate([
+{ "$unwind": "$books" },
+{"$unwind" : "$books.cities"},
+{"$match" : {"books.title" : "The Life and Most Surprising Adventures of Robinson Crusoe, of York, Mariner (1801)"}},
+{"$group" : {"_id" : {"_id" : "$_id", "book" : "$books.title", "cities" : "$books.cities.cityName"}}}
+])
+```
