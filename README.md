@@ -14,6 +14,7 @@
 ```sql
 create index authors_book_id_index on authors(book_id);
 ```
+<h2>Queries</h2>
 
 <h3>1-Given a city name your application returns all book titles with corresponding authors that mention this city.</h3>
 
